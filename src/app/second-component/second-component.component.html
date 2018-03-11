@@ -1,0 +1,64 @@
+<div class="main">
+  <div class="main_text">
+  <p>{{name}}{{valueName}}</p> 
+  <p>{{lastName}}{{valueLastName}}</p>
+  <p>{{age}}{{NewElement}}</p>
+  <p>{{job}}{{valueJob}}</p>
+  <p>{{company}}{{valueCompany}}</p>
+  <!-- <div *ngFor = "let 21 for valueAge"></div> -->
+
+    <button class="btn btn-primary"(click)="onClickButton()">Edit</button>
+</div>
+ 
+
+
+    
+    <div *ngIf = "isShow">
+
+        <div class="input_area">
+            <div class="text">
+              <ul>
+              <li>Name:</li>
+              <li>Last Name:</li>
+              <li>Age:</li>
+              <li>Job:</li>
+              <li> Company:</li>
+            </ul>
+              <button class="btn btn-primary btn-primary_close"(click)="onClickButton()">Close</button>
+            </div>
+        
+            <div class="inputs">
+              <ul>
+                <li><input type="text"[(ngModel)]="valueName" class="valueName"></li>
+                <li><input type="text"[(ngModel)]="valueLastName" class="valueLastName"></li>
+                <li><input type="number"[(ngModel)]="NewElement" class="valueAge"></li>
+                <li><input type="text"[(ngModel)]="valueJob" class="valueJob"></li>
+                <li><input type="text"[(ngModel)]="valueCompany" class="valueCompany"></li>
+              </ul>
+        </div>
+        </div>
+
+        
+
+    </div>
+
+    
+<div class="skills">
+    <div *ngFor = "let n of skill">
+      <div>{{n}}</div>
+    </div>
+    <button class="btn btn-primary1"(click)="onClickButtonSkill()">Add new skill</button>
+
+
+</div>
+<div *ngIf = "isShowSkill">
+<div class="ShowSkill">
+  <input type="text" [(ngModel)]="newSkill" class="input_skill">
+  <br><br>
+  <button (click)="addSkill()" class="add_skills">add</button>
+</div>
+</div>
+  <!-- <input type="text"(input)=editName($event)> -->
+</div>
+
+
